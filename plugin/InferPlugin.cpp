@@ -28,6 +28,7 @@
 using namespace nvinfer1;
 using namespace nvinfer1::plugin;
 
+#include "hardSwishPlugin.h"
 #include "batchTilePlugin.h"
 #include "batchedNMSPlugin.h"
 #include "coordConvACPlugin.h"
@@ -162,6 +163,7 @@ extern "C"
 {
     bool initLibNvInferPlugins(void* logger, const char* libNamespace)
     {
+	initializePlugin<nvinfer1::plugin::HardSwishPluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::BatchTilePluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::BatchedNMSPluginCreator>(logger, libNamespace);
         initializePlugin<nvinfer1::plugin::BatchedNMSDynamicPluginCreator>(logger, libNamespace);

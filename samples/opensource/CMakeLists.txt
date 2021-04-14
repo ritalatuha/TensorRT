@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 set(OPENSOURCE_SAMPLES_LIST
+    sampleHardSwish
     sampleAlgorithmSelector
     sampleCharRNN
     sampleDynamicReshape
